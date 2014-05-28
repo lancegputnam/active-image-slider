@@ -1,14 +1,19 @@
 /* global describe, it */
 
-(function () {
-    'use strict';
+ (function () {
+     'use strict';
 
-    describe('Give it some context', function () {
-        describe('maybe a bit more context here', function () {
-            it('should run here few assertions', function () {
-              var answer = 2;
-              expect(2).to.equal(answer);
-            });
-        });
-    });
-})();
+     describe("Image Slider", function () {
+         it("should fade after 2 seconds", function () {
+         	expect (imageSeconds).to.equal(2);
+         });
+
+         it("should transition to fade out", function () {
+         	expect (imageTransition).to.be(fadeOut);
+         });
+
+         it("should go in order from first to last", function () {
+         	expect (inOrder[1,2,3,4,5]).to.equal([1,2,3,4,5]);
+         });
+     });
+ })();
