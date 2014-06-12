@@ -17,3 +17,59 @@
          });
      });
  })();
+
+
+(function (){
+	'use strict';
+
+	describe('the slideshow function generates a slideshow', function () {
+		it('should only accept an array for its images argument', function (){
+			var imageSlideShow = function () {
+				slideshow("string")
+			}
+
+			expect(imageSlideShow).to.throw(Error)
+		});
+
+		it('should throw an error if the array is empty', function (){
+			var emptyArray = function () {
+				slideshow([blahblah]);
+			}
+
+			expect(emptyArray).to.throw.Error
+		})
+	});
+
+	describe('the slideshow creates a transition between images', function (){
+		it('should ensure that the slideshow has an appropriate interval', function (){
+			var arraySample = ["image1","image2","image3"]
+			var slideshowInstance = new Slideshow(arraySample, 3000, 700);
+
+			expect(slideshowInstance.interval).to.equal(3000);
+		});
+
+		it('should ensure that the slideshow has an appropriate delay', function (){
+			var arraySample = ["image1","image2","image3"]
+			var slideshowInstance = new Slideshow(arraySample, 3000, 700);
+
+			expect(slideshowInstance.delay).to.equal(3000);
+		});
+	});
+})();
+
+ // describe ('slideshow () function which generates a slideshow', function () {
+ // 	it('should only accept an array for its images argument', function () {
+ // 		var badSlideShow = function () {
+ // 			slideshow("string")
+ // 		}
+
+ // 		expect(badSlideShow).to.throw(Error);
+ // 	});
+
+ // 	it('shoudl throw an error if array is empty', function (){
+ // 		var emptyArray = function () {
+	// 	slideshow([]); 		
+	// 	}
+	// 	expect(emptyArry).to.throw(Error)
+ // 	})
+ // })
